@@ -80,3 +80,29 @@ public class AddressBookContactDetails {
 				+ phone + '}';
 	}
 }
+@Override
+public AddressBookContactDetails newAddressBook() {
+	AddressBookContactDetails AddressBook = new AddressBookContactDetails();
+	System.out.println("Enter the First Name");
+	String firstName = input.next();
+	System.out.println("Enter the Last Name");
+	String lastName = input.next();
+	System.out.println("Enter The Address");
+	String address = input.next();
+	System.out.println("Enter the city");
+	String city = input.next();
+	System.out.println("Enter the state");
+	String state = input.next();
+	System.out.println("Enter the zip Code");
+	int zip = input.nextInt();
+	System.out.println("Enter the Phone number");
+	long phone = input.nextLong();
+	AddressBook.setfirstName(firstName);
+	AddressBook.setlastName(lastName);
+	AddressBook.setAddress(address);
+	AddressBook.setCity(city);
+	AddressBook.setState(state);
+	AddressBook.setZip(zip);
+	AddressBook.setPhone(phone);
+	return AddressBook;
+}
