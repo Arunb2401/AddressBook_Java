@@ -1,10 +1,30 @@
 package addressBook;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 //import java.util.Scanner;
 
 public class AddressBookMainClass {
 	public static void main(String[] args) {
 		System.out.println("Welcome to Address Book Program");
+		@Override
+		public void sortByfirstName() {
+			List<AddressBookContactDetails> value = new ArrayList<>();
+			if (addressBookContainer != null) {
+				value.addAll(addressBookContainer.values());
+				Collections.sort(value, new Comparator<AddressBookContactDetails>() {
+					public int compare(AddressBookContactDetails Person1, AddressBookContactDetails Person2) {
+						return Person1.getfirstName().compareTo(Person2.getfirstName());
+					}
+				});
+			}
+			for (AddressBookContactDetails valueList : value) {
+				System.out.println(valueList);
+			}
+		}
 	}
 }
 public class AddressBookContactDetails {
@@ -105,4 +125,20 @@ public AddressBookContactDetails newAddressBook() {
 	AddressBook.setZip(zip);
 	AddressBook.setPhone(phone);
 	return AddressBook;
+}
+@Override
+public void sortByfirstName() {
+	List<AddressBookContactDetails> value = new ArrayList<>();
+	if (addressBookContainer != null) {
+		value.addAll(addressBookContainer.values());
+		Collections.sort(value, new Comparator<AddressBookContactDetails>() {
+			public int compare(AddressBookContactDetails Person1, AddressBookContactDetails Person2) {
+				return Person1.getfirstName().compareTo(Person2.getfirstName());
+			}
+		});
+	}
+	for (AddressBookContactDetails valueList : value) {
+		System.out.println(valueList);
+	}
+}
 }
